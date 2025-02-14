@@ -1,0 +1,35 @@
+.reloj-container {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    padding: 0;
+    margin: 0;
+    width: 9%;
+    height: 8%;
+    
+  }
+  
+  .reloj {
+    text-align: center;
+   
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hora {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: orangered;
+    text-shadow: 0 0 15px rgba(169, 169, 169, 0.8);
+    
+    height: 100%;
+  }
+  
+  .subtitulo {
+    
+    color: #737373;
+    font-size: 1.25rem;
+    background-color: green;
+    display: inline-block;
+  }
+  
