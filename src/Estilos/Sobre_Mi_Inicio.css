@@ -1,0 +1,528 @@
+/* AnimatedAboutMe.css */
+
+/* Variables CSS para valores reutilizables */
+:root {
+  --card-margin-top: -80px;
+  --card-margin-top-tablet: -40px;
+  --card-margin-top-mobile: -30px;
+  --border-radius: 20px;
+  --padding-large: 30px;
+  --padding-medium: 20px;
+  --padding-small: 15px;
+}
+
+/* Layout general */
+.animated-about-me-wrapper {
+  min-height: 100vh;
+  /* background eliminado para transparencia */
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+
+@keyframes matrix {
+  0%   { transform: translateY(-100vh); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Matrix Background */
+.matrix-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.matrix-char {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  color: rgba(0, 255, 127, 0.75);
+  opacity: 0.6;
+  text-shadow: 0 0 6px rgba(0, 255, 127, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  animation: matrix 4s linear infinite;
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  max-width: none;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: start;
+  justify-items: start;
+  margin-top: -40px;
+
+  /* Aislamiento básico */
+  contain: layout;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Secciones - Diseño limpio y funcional */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Separación base */
+  justify-self: start;
+  position: relative;
+  z-index: 5; /* Z-index base para la sección izquierda */
+
+  /* Aislamiento básico */
+  contain: layout;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.right-section {
+  position: relative;
+  border: 1px solid rgba(0,255,127,0.2);
+  border-radius: var(--border-radius);
+  padding: var(--padding-large);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  max-width: 600px;
+  justify-self: end;
+  margin-top: var(--card-margin-top);
+  z-index: 1; /* Z-index más bajo para la tarjeta */
+
+  /* Aislamiento básico */
+  contain: layout;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Animaciones de texto */
+.greeting {
+  font-size: 1.5rem;
+  color: #00ff7f;
+  font-weight: 300;
+  opacity: 0;
+  margin-bottom: 5px; /* Reducido de margen por defecto */
+}
+.name {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(45deg,#fff,#94a3b8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 5px 0; /* Reducido de 10px */
+  opacity: 0;
+}
+.role {
+  font-size: 1.5rem;
+  color: #cccccc;
+  font-weight: 300;
+  margin-bottom: 10px; /* Más separación del texto animado */
+  opacity: 0;
+}
+
+
+
+/* PROTECCIÓN SUTIL PARA LA PÁGINA SOBRE MÍ */
+.animated-about-me-wrapper {
+  /* AISLAMIENTO BÁSICO */
+  contain: layout;
+  isolation: isolate;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  /* Posicionamiento estable */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Descripción */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin: 0 0 15px 0; /* Reducido de 20px */
+  opacity: 0;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px; /* Reducido de 20px */
+  margin: 20px 0; /* Reducido de 30px */
+}
+.skill-bar {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: var(--padding-medium);
+  border: 1px solid rgba(0,255,127,0.1);
+  transition: all .3s ease;
+  opacity: 0;
+}
+.skill-bar:hover {
+  border-color: rgba(0,255,127,0.3);
+  background: rgba(0,255,127,0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,255,127,0.1);
+}
+.skill-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+/* CTA */
+.cta-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px; /* Reducido de 30px */
+  opacity: 0;
+}
+.cta-button {
+  background: linear-gradient(45deg,#00ff7f,#00cc66);
+  border: none;
+  padding: var(--padding-small) var(--padding-large);
+  border-radius: 8px;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  display: inline-flex;           /* centra contenido */
+  align-items: center;            /* centra vertical */
+  justify-content: center;        /* centra horizontal */
+  text-decoration: none;          /* quita subrayado en <a> */
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,255,127,0.3);
+  background: linear-gradient(45deg,#00cc66,#00ff7f);
+}
+.cta-outline {
+  background: transparent;
+  border: 2px solid #00ff7f;
+  color: #00ff7f;
+}
+.cta-outline:hover {
+  background: #00ff7f;
+  color: #000;
+}
+
+/* Disparo de animaciones */
+.animated-about-me-wrapper.visible .greeting {
+  animation: slideInLeft 1s ease-out 0.2s both;
+}
+.animated-about-me-wrapper.visible .name {
+  animation: slideInLeft 1.2s ease-out 0.5s both;
+}
+.animated-about-me-wrapper.visible .role {
+  animation: slideInLeft 1s ease-out 0.8s both;
+}
+.animated-about-me-wrapper.visible .description {
+  animation: slideInRight 1.2s ease-out 0.3s both;
+}
+.animated-about-me-wrapper.visible .skill-bar {
+  animation: fadeInUp 1s ease-out calc(0.6s + var(--delay)) both;
+}
+.animated-about-me-wrapper.visible .cta-section {
+  animation: fadeInUp 1.2s ease-out 1.4s both;
+}
+
+/* Responsive */
+
+/* Pantallas medianas (tablets grandes, laptops pequeñas) */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .container {
+    /* LAYOUT SIMPLIFICADO PARA TABLETS */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 50px !important; /* Mayor separación en tablets */
+    padding: 20px;
+    margin-top: -30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* PROTECCIÓN SUTIL CONTRA CAMBIOS DE LAYOUT */
+    contain: layout;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .left-section {
+    /* CENTRAMIENTO SIMPLE PARA TABLETS */
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    gap: 18px; /* Gap reducido para tablets */
+    order: 1;
+
+    /* PROTECCIÓN BÁSICA */
+    contain: layout;
+    isolation: isolate;
+  }
+
+  .right-section {
+    /* ANCHO FIJO PARA EVITAR CAMBIOS */
+    width: 100%;
+    max-width: 600px;
+    padding: var(--padding-large);
+    margin-top: 0 !important;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(0, 255, 127, 0.03);
+    border: 1px solid rgba(0, 255, 127, 0.15);
+    order: 2;
+
+    /* PROTECCIÓN CONTRA INTERFERENCIAS */
+    contain: layout;
+    isolation: isolate;
+  }
+
+  /* TIPOGRAFÍA AJUSTADA PARA TABLETS */
+  .name {
+    font-size: 3rem;
+  }
+
+  .role {
+    font-size: 1.3rem;
+  }
+
+
+
+  /* GRID DE SKILLS AJUSTADO */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* BOTONES CENTRADOS */
+  .cta-section {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cta-button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+  .container {
+    display: flex !important; /* Cambiar a flexbox para mejor control */
+    flex-direction: column !important;
+    gap: 40px !important; /* Mayor separación entre secciones */
+    padding: 20px;
+    align-items: center;
+    margin-top: -20px; /* Ajuste para móviles */
+
+    /* PROTECCIÓN CONTRA CAMBIOS DE LAYOUT */
+    contain: layout style;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .left-section {
+    width: 100% !important;
+    text-align: center;
+    gap: 15px; /* Gap más pequeño para móviles */
+    order: 1; /* Asegurar que venga primero */
+
+    /* PROTECCIÓN CONTRA INTERFERENCIAS */
+    contain: layout style;
+    isolation: isolate;
+  }
+  .right-section {
+    width: 100% !important;
+    max-width: 500px;
+    order: 2; /* Asegurar que venga después */
+
+    /* PROTECCIÓN CONTRA INTERFERENCIAS */
+    contain: layout style;
+    isolation: isolate;
+  }
+  .name { font-size: 2.5rem; }
+  .role { font-size: 1.4rem; }
+
+  .right-section {
+    padding: var(--padding-large) var(--padding-medium);
+    margin-top: 0 !important; /* Remover margen superior conflictivo */
+  }
+  .skills-grid { grid-template-columns: 1fr; gap: 15px; }
+  .cta-section { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .container {
+    gap: 35px !important; /* Separación consistente */
+    margin-top: -10px; /* Ajuste para móviles pequeños */
+
+    /* PROTECCIÓN CONTRA CAMBIOS DE LAYOUT */
+    contain: layout style;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .left-section {
+    gap: 12px; /* Gap aún más pequeño para móviles pequeños */
+
+    /* PROTECCIÓN CONTRA INTERFERENCIAS */
+    contain: layout style;
+    isolation: isolate;
+  }
+  .right-section {
+    /* PROTECCIÓN CONTRA INTERFERENCIAS */
+    contain: layout style;
+    isolation: isolate;
+  }
+  .name { font-size: 2rem; }
+  .greeting { font-size: 1.2rem; }
+  .role { font-size: 1.2rem; }
+
+  .right-section {
+    padding: 25px var(--padding-small);
+    margin-top: 0 !important; /* Remover margen conflictivo */
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  .container {
+    gap: 30px !important; /* Separación mínima pero suficiente */
+    /* PROTECCIÓN CONTRA CAMBIOS DE LAYOUT */
+    contain: layout style;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .left-section {
+    gap: 10px; /* Gap mínimo para móviles muy pequeños */
+
+    /* PROTECCIÓN CONTRA INTERFERENCIAS */
+    contain: layout style;
+    isolation: isolate;
+  }
+  .right-section {
+    /* PROTECCIÓN CONTRA INTERFERENCIAS */
+    contain: layout style;
+    isolation: isolate;
+  }
+
+  .name { font-size: 1.8rem; }
+  .greeting { font-size: 1.1rem; }
+  .role { font-size: 1.1rem; }
+}
+
+/* Máquina de escribir animada */
+.typewriter-container {
+  margin-top: 25px; /* Separación inicial del texto anterior */
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #00ff7f;
+  min-height: 1.4rem; /* Para mantener el espacio cuando no hay texto */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrado perfecto horizontal */
+  text-align: center; /* Asegurar centrado del texto */
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.5s both;
+  position: relative;
+  z-index: 10; /* Asegurar que esté por encima de otros elementos */
+  width: 100%;
+  padding: 0;
+}
+
+.typewriter-text {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.typewriter-cursor {
+  margin-left: 2px;
+  color: #00ff7f;
+  font-weight: 100;
+  animation: blink 1s infinite;
+}
+
+/* Animación de parpadeo del cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Responsive para la máquina de escribir */
+@media (max-width: 1200px) {
+  .typewriter-container {
+    font-size: 1.1rem;
+    margin-top: 30px;
+    justify-content: center; /* Mantener centrado */
+    text-align: center; /* Mantener centrado */
+    z-index: 10;
+  }
+}
+
+@media (max-width: 1024px) {
+  .typewriter-container {
+    font-size: 1rem;
+    margin-top: 25px;
+    justify-content: center; /* Mantener centrado */
+    text-align: center; /* Mantener centrado */
+    z-index: 10;
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriter-container {
+    font-size: 0.95rem;
+    margin-top: 20px; /* Menor separación en tablets para optimizar espacio */
+    justify-content: center; /* Mantener centrado */
+    text-align: center; /* Mantener centrado */
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-container {
+    font-size: 0.9rem;
+    margin-top: 18px; /* Separación optimizada para móviles */
+    justify-content: center; /* Mantener centrado */
+    text-align: center; /* Mantener centrado */
+    z-index: 10;
+  }
+}
+
+@media (max-width: 360px) {
+  .typewriter-container {
+    font-size: 0.85rem;
+    margin-top: 15px; /* Separación mínima pero suficiente */
+    justify-content: center; /* Mantener centrado */
+    text-align: center; /* Mantener centrado */
+    z-index: 10;
+  }
+}

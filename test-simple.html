@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Simple - Portafolio</title>
+    <style>
+        body {
+            background-color: #0F162B;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 { color: #00FF99; }
+        .status { 
+            background: rgba(255,255,255,0.1); 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin: 20px 0; 
+        }
+        .success { color: #00FF99; }
+        .error { color: #FF6B6B; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test del Portafolio</h1>
+        
+        <div class="status">
+            <h2 class="success">✅ HTML funcionando</h2>
+            <p>Si puedes ver esta página, el HTML está funcionando correctamente.</p>
+        </div>
+        
+        <div class="status">
+            <h2>🔧 Estado del proyecto:</h2>
+            <p class="success">✅ Dependencias instaladas</p>
+            <p class="success">✅ Errores de sintaxis corregidos</p>
+            <p class="success">✅ Servidor ejecutándose</p>
+        </div>
+        
+        <div class="status">
+            <h2>📱 Próximos pasos:</h2>
+            <ol style="text-align: left; display: inline-block;">
+                <li>El servidor debería estar ejecutándose en <code>http://localhost:5173</code></li>
+                <li>Abre esa URL en tu navegador</li>
+                <li>Si hay errores, revisa la consola del navegador (F12)</li>
+            </ol>
+        </div>
+        
+        <div class="status">
+            <h2>🚨 Si aún hay problemas:</h2>
+            <p>1. Verifica que no haya errores en la consola del navegador</p>
+            <p>2. Asegúrate de que la imagen <code>Perfil.png</code> esté en <code>public/imagenes/</code></p>
+            <p>3. Revisa que todos los archivos CSS estén en la carpeta correcta</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,325 @@
+/* Estilos base para móviles y pantallas pequeñas */
+.contactos-wrapper {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;  /* centra horizontalmente */
+  align-items: center;       /* centra verticalmente si hay varias filas */
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;    /* Asegura dirección de columna en móviles */
+  text-align: center;        /* Centrado de texto */
+  overflow: visible;         /* PERMITIR QUE SE MUESTREN TODOS LOS ICONOS */
+}
+
+/* Ajuste específico para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .contactos-wrapper {
+    margin-top: 2rem; /* Más espacio en pantallas muy pequeñas */
+  }
+}
+
+.contactos-wrapper > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;            /* espacio entre botones */
+  flex-wrap: wrap;      /* PERMITIR QUE LOS ICONOS SE DISTRIBUYAN EN MÚLTIPLES LÍNEAS */
+  width: 100%;          /* Asegura que ocupe todo el ancho disponible */
+  max-width: 100%;      /* No exceda el ancho del contenedor */
+  text-align: center;   /* Centrado de texto */
+  overflow: visible;    /* PERMITIR QUE SE MUESTREN TODOS LOS ICONOS */
+}
+
+/* Enlaces sin decoración */
+.contactos-wrapper a {
+  text-decoration: none;
+}
+
+/* Botón general */
+.button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0; /* usamos gap del contenedor para el espaciado */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0; /* EVITAR QUE LOS BOTONES SE ENCOJAN */
+  overflow: hidden; /* EVITAR QUE EL CONTENIDO SE SALGA Y CAUSE SCROLL */
+}
+
+.button svg {
+  color: white;
+  width: 30px;
+  height: 30px;
+  z-index: 9;
+}
+
+/* Efecto de clic */
+.button:active {
+  transform: scale(0.85);
+}
+
+/* Efecto de fondo dinámico al pasar el mouse */
+.button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #212121;
+  border-radius: 50px;
+  z-index: -1;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transition: 0.4s;
+}
+
+.button:hover::before {
+  width: 0px;
+  height: 0px;
+}
+
+/* Colores más intensos y vibrantes para cada red */
+.button.whatsapp {
+  background: linear-gradient(120deg, #00ff00, #00aa00); /* VERDE MÁS VIBRANTE */
+}
+
+.button.instagram {
+  background: linear-gradient(120deg, #8a2be2, #ff1493, #ffd700); /* GRADIENTE MÁS INTENSO */
+}
+
+.button.outlook {
+  background: linear-gradient(120deg, #0066cc, #004499); /* AZUL MÁS PROFUNDO */
+}
+
+.button.youtube {
+  background: linear-gradient(120deg, #ff0000, #cc0000); /* ROJO MÁS INTENSO */
+}
+
+.button.telegram {
+  background: linear-gradient(120deg, #0088ff, #0055cc); /* AZUL MÁS VIBRANTE */
+}
+
+.button.facebook {
+  background: linear-gradient(120deg, #1877f2, #0a52cc); /* AZUL FACEBOOK MÁS SATURADO */
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 767px) {
+  .contactos-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 1.5rem 0 0 0 !important; /* Agregar margen superior para bajar los iconos */
+    padding: 0 !important;
+    display: block !important;
+    text-align: center !important;
+    overflow: visible !important; /* PERMITIR QUE SE MUESTREN TODOS LOS ICONOS */
+  }
+
+  .contactos-wrapper > div {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important; /* USAR ANCHO COMPLETO PARA MEJOR ADAPTABILIDAD */
+    min-width: auto !important; /* PERMITIR QUE SE AJUSTE AL CONTENIDO */
+    max-width: 100% !important; /* NO EXCEDER EL ANCHO DE LA PANTALLA */
+    margin: 0 auto !important; /* Centrado automático */
+    padding: 0 10px !important; /* PADDING LATERAL PARA EVITAR CORTE */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important; /* PERMITIR WRAP PARA MEJOR ADAPTABILIDAD */
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important; /* GAP MÁS PEQUEÑO PARA OPTIMIZAR ESPACIO */
+    background: transparent !important; /* Sin color de fondo */
+    overflow: visible !important; /* ASEGURAR QUE TODOS LOS ICONOS SE MUESTREN */
+  }
+  
+  /* Forzar centrado de los botones individuales */
+  .contactos-wrapper .button {
+    margin: 0 !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important; /* ASEGURAR QUE NO SE ENCOJAN */
+    float: none !important;
+    width: 42px !important; /* AÚN MÁS PEQUEÑO PARA MEJOR ADAPTABILIDAD */
+    height: 42px !important; /* AÚN MÁS PEQUEÑO PARA MEJOR ADAPTABILIDAD */
+    position: relative !important; /* ASEGURAR POSICIONAMIENTO CORRECTO */
+    overflow: hidden !important; /* EVITAR SCROLL EN BOTONES */
+  }
+
+  /* Ajustar tamaño de iconos para botones más pequeños */
+  .contactos-wrapper .button svg {
+    width: 22px !important; /* ICONO AÚN MÁS PEQUEÑO */
+    height: 22px !important; /* ICONO AÚN MÁS PEQUEÑO */
+  }
+  
+  /* Aplicar colores atractivos y borde grueso como en pantallas grandes */
+  .contactos-wrapper .button {
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Aplicar colores más intensos y vibrantes para cada red social en móviles */
+  .contactos-wrapper .button.whatsapp {
+    background: linear-gradient(120deg, #00ff00, #00aa00) !important; /* VERDE MÁS VIBRANTE */
+  }
+
+  .contactos-wrapper .button.instagram {
+    background: linear-gradient(120deg, #8a2be2, #ff1493, #ffd700) !important; /* GRADIENTE MÁS INTENSO */
+  }
+
+  .contactos-wrapper .button.outlook {
+    background: linear-gradient(120deg, #0066cc, #004499) !important; /* AZUL MÁS PROFUNDO */
+  }
+
+  .contactos-wrapper .button.youtube {
+    background: linear-gradient(120deg, #ff0000, #cc0000) !important; /* ROJO MÁS INTENSO */
+  }
+
+  .contactos-wrapper .button.telegram {
+    background: linear-gradient(120deg, #0088ff, #0055cc) !important; /* AZUL MÁS VIBRANTE */
+  }
+
+  .contactos-wrapper .button.facebook {
+    background: linear-gradient(120deg, #1877f2, #0a52cc) !important; /* AZUL FACEBOOK MÁS SATURADO */
+  }
+  
+  /* Restaurar el efecto ::before para pantallas pequeñas */
+  .contactos-wrapper .button::before {
+    display: block !important;
+    content: "" !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 42px !important; /* AJUSTADO AL NUEVO TAMAÑO DE 42px */
+    height: 42px !important; /* AJUSTADO AL NUEVO TAMAÑO DE 42px */
+    background-color: #212121 !important;
+    border-radius: 50px !important;
+    z-index: -1 !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    transition: 0.4s !important;
+  }
+  
+  /* Efecto hover en pantallas pequeñas */
+  .contactos-wrapper .button:hover::before {
+    width: 0px !important;
+    height: 0px !important;
+  }
+
+  /* PANTALLAS ULTRA PEQUEÑAS - BOTONES AÚN MÁS PEQUEÑOS */
+  @media (max-width: 360px) {
+    .contactos-wrapper .button {
+      width: 38px !important; /* ULTRA PEQUEÑO PARA MÁXIMA ADAPTABILIDAD */
+      height: 38px !important; /* ULTRA PEQUEÑO PARA MÁXIMA ADAPTABILIDAD */
+    }
+
+    .contactos-wrapper .button svg {
+      width: 20px !important; /* ICONO ULTRA PEQUEÑO */
+      height: 20px !important; /* ICONO ULTRA PEQUEÑO */
+    }
+
+    .contactos-wrapper .button::before {
+      width: 38px !important; /* AJUSTADO AL TAMAÑO ULTRA PEQUEÑO */
+      height: 38px !important; /* AJUSTADO AL TAMAÑO ULTRA PEQUEÑO */
+    }
+
+    .contactos-wrapper > div {
+      gap: 4px !important; /* GAP MÍNIMO PARA OPTIMIZAR ESPACIO */
+    }
+  }
+  
+  /* Mantener el efecto ::after limpio */
+  .contactos-wrapper .button::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+  }
+}
+
+/* Visibilidad responsive según ubicación deseada */
+.contactos-desktop { display: none; }
+.contactos-mobile { display: flex; }
+
+@media (min-width: 768px) {
+  /* Asegurar colores más vibrantes en pantallas medianas */
+  .button.telegram {
+    background: linear-gradient(120deg, #0088ff, #0055cc) !important; /* AZUL MÁS VIBRANTE */
+  }
+
+  .button.facebook {
+    background: linear-gradient(120deg, #1877f2, #0a52cc) !important; /* AZUL FACEBOOK MÁS SATURADO */
+  }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1080px) {
+  .contactos-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 2rem; /* Ajusta según lo que necesites */
+    margin-left: 0;      /* Centrado o ajusta según tu diseño */
+    width: 100%;
+    max-width: 300px; /* ANCHO CONTROLADO PARA EVITAR CORTE */
+  }
+
+  .contactos-wrapper > div {
+    flex-direction: row;
+    gap: 12px; /* ESPACIO MÁS AMPLIO ENTRE ICONOS */
+    flex-wrap: wrap; /* PERMITIR WRAP EN PANTALLAS GRANDES SI ES NECESARIO */
+    justify-content: center; /* CENTRAR LOS ICONOS */
+    align-items: center;
+    width: 100%;
+  }
+
+  /* AJUSTAR TAMAÑO DE BOTONES EN PANTALLAS GRANDES */
+  .contactos-wrapper .button {
+    width: 55px; /* BOTÓN MÁS GRANDE */
+    height: 55px; /* BOTÓN MÁS GRANDE */
+    flex-shrink: 0; /* NO PERMITIR QUE SE ENCOJAN */
+  }
+
+  .contactos-wrapper .button svg {
+    width: 32px; /* ICONO MÁS GRANDE */
+    height: 32px; /* ICONO MÁS GRANDE */
+  }
+
+  /* Asegurar colores más vibrantes en pantallas grandes */
+  .button.telegram {
+    background: linear-gradient(120deg, #0088ff, #0055cc) !important; /* AZUL MÁS VIBRANTE */
+  }
+
+  .button.facebook {
+    background: linear-gradient(120deg, #1877f2, #0a52cc) !important; /* AZUL FACEBOOK MÁS SATURADO */
+  }
+
+  /* Visibilidad correcta para pantallas grandes */
+  .contactos-desktop { display: flex !important; }
+  .contactos-mobile { display: none !important; }
+}
+
+
+/* Overrides finales de visibilidad (evitan que reglas posteriores reescriban display) */
+@media (max-width: 1079.98px) {
+  .contactos-mobile { display: flex !important; }
+  .contactos-desktop { display: none !important; }
+}
+@media (min-width: 1080px) {
+  .contactos-mobile { display: none !important; }
+  .contactos-desktop { display: flex !important; }
+}
+

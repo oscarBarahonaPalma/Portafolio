@@ -1,0 +1,17 @@
+/* Proyectos.css */
+.proyectos {
+  /* Que su altura se ajuste al contenido en lugar de 100vh fijo */
+  width: 100%;
+  padding: 20px;             /* Espacio interior */
+  box-sizing: border-box;    /* Incluye el padding en el ancho total */
+
+  /* Modelo de caja normal y sin overflow propio */
+  display: flex;             
+  flex-wrap: wrap;           
+  justify-content: center;  
+  gap: 20px;                 /* Separación entre tarjetas */
+
+  /* No fijes height ni overflow aquí: deja que el <body> haga el scroll */
+  height: auto;
+  overflow: visible;
+}

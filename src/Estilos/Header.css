@@ -1,68 +1,77 @@
-#header{
-    background-color: #262626;
-    width: 100%;
-    height: 10%;
-    border-bottom: solid 2px orangered;
-   display: flex;
-   justify-content: space-between;
+/* Header moderno y responsive */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Z-INDEX MÁS ALTO PARA QUE EL MENÚ PUEDA TENER PRIORIDAD */
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-ul{
-    
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    
+.header__inner {
+  height: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-li{
-    color: black;
-    list-style: none;
-    margin:  15px;
-    font-size: 18px;
-    color: white;
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand__name { color: #fff; font-weight: 700; font-size: 1rem; }
+
+/* Hamburguesa */
+.hamburger {
+  display: inline-flex;
+  width: 42px; height: 42px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  align-items: center; justify-content: center;
+  gap: 4px; flex-direction: column; cursor: pointer;
+  position: relative;
+  z-index: 1001; /* Z-INDEX SUPERIOR AL HEADER PARA QUE LA X ESTÉ SIEMPRE VISIBLE */
+}
+.hamburger span { width: 20px; height: 2px; background: #fff; display: block; transition: transform .2s ease; }
+.hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Asegurar que el botón esté siempre por encima cuando el menú esté abierto */
+.hamburger.is-open {
+  z-index: 1002; /* Z-INDEX AÚN MÁS ALTO CUANDO ESTÁ ABIERTO */
+  background: rgba(255,255,255,0.1); /* FONDO MÁS VISIBLE CUANDO ESTÁ ABIERTO */
+  border-color: rgba(255,255,255,0.3); /* BORDE MÁS VISIBLE */
 }
 
-h1{
-    margin: 0;
-    padding: 9px 25px;
-    width: 27%;
-    height: 100%;
-    
+/* Menú */
+.menu {
+  position: fixed; inset: 0 0 0 auto; right: -100%; top: 0;
+  width: 75%; height: 100vh;
+  background: rgba(0,0,0,0.9);
+  list-style: none; display: flex; flex-direction: column; gap: 16px;
+  padding: 84px 20px 20px 20px; margin: 0; transition: right .25s ease;
+  z-index: 999; /* Z-INDEX ALTO PARA QUE ESTÉ POR ENCIMA DE OTROS ELEMENTOS */
+}
+.menu.is-open { right: 0; }
+.menu a { color: #fff; text-decoration: none; font-weight: 500; font-size: 1.05rem; }
+.menu a.active { color: #00ff99; }
+.menu a:hover { color: #a7f3d0; }
+
+/* Screen reader only text for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-  .scanner span {
-    color: transparent;
-    font-size: 1.4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .scanner span::before {
-    content: "Loading...";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    border-right: 4px solid #17FEFF;
-    overflow: hidden;
-    color: #17FEFF;
-    animation: load91371 2s linear infinite;
-  }
-
-  @keyframes load91371 {
-    0%, 10%, 100% {
-      width: 0;
-    }
-
-    10%,20%,30%,40%,50%,60%,70%,80%,90%,100% {
-      border-right-color: transparent;
-    }
-
-    11%,21%,31%,41%,51%,61%,71%,81%,91% {
-      border-right-color: #17FEFF;
-    }
-
-    60%, 80% {
-      width: 100%;
-    }
-  }
+/* Desktop */
+@media (min-width: 1024px) {
+  .hamburger { display: none; }
+  .menu { position: static; height: auto; width: auto; background: transparent; flex-direction: row; gap: 28px; padding: 0; }
+}

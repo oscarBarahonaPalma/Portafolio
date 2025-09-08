@@ -1,178 +1,465 @@
-#cuerpo {
+/* src/Estilos/Cuerpo.css */
+
+/* —— 1) Base (mobile-first): layout flexible responsivo —— */
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 0.5rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Layout principal flexible */
+.cuerpo > * {
+  width: 100%;
+  max-width: 1200px; /* Límite máximo para pantallas grandes */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout responsivo con breakpoints granulares */
+@media (min-width: 481px) and (max-width: 767px) {
+  /* TABLETS PEQUEÑAS - Elementos centrados en todo momento */
+  .cuerpo {
+    flex-direction: column; /* MANTENER EN COLUMNA PARA MEJOR CONTROL */
+    justify-content: center;
+    align-items: center; /* CENTRAR TODOS LOS ELEMENTOS */
+    gap: 20px;
+    padding: 0.8rem;
+  }
+
+  .imagen_letra {
     width: 100%;
-    height: 80%;
-    background-color: #262626;
+    max-width: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
+  }
 
-img {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    border-bottom: solid 8px white;
-    transform: scale(0.8); /* Usa transform para aplicar scale */
-}
+  .imagen_perfil {
+    margin: 1rem auto;
+  }
 
-#Padre_Redes {
-    width: 19%;
-    height: 248px;
-    position: absolute;
-    left: 40px;
-    margin: 0;
-}
-
-#Facebook {
+  .redes-sociales-container {
+    width: 100%;
     display: flex;
-    justify-content: center;   /* Centra el contenido horizontalmente */
-    align-items: center;       /* Centra el contenido verticalmente */
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 90px 0px 5px 0px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 23px;
-    top: 14px;
-    transform: scale(1.2);
-    border-top: solid 5px blue;
+    justify-content: center;
+  }
+
+  .presentacion-contacto {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-#Facebook::before {
-    content: "";
-    background-image: url(../imagenes/Facebook.svg);
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-    display: flex; 
-    margin: 0; 
-    padding: 0;
-    justify-content: center; 
-    align-items: center; 
-    position: absolute;
-    right: 20px; 
-    bottom: 20px;        
-                
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* TABLETS GRANDES - Layout centrado y controlado */
+  .cuerpo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* CENTRAR VERTICALMENTE */
+    gap: 20px;
+    padding: 1rem;
+  }
 
-}
-
-#Whatsapp {
+  .imagen_letra {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 90px 0px 5px 0px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 140px;
-    top: 14px;
-    transform: scale(1.2) rotate(90deg);
-    border-top: solid 5px yellowgreen;
-    
+  }
+
+  .imagen_perfil {
+    margin: 1rem auto;
+  }
+
+  .redes-sociales-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+
+  .presentacion-contacto {
+    flex: 1;
+    min-width: 350px;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-#Whatsapp::before {
-    content: "";
-    background-image: url(../imagenes/Whatsapp.svg);
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-    display: flex;  
-    justify-content: center; 
-    align-items:center; 
-    margin: 0;
-    padding: 0;
-    transform: rotate(265deg); 
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-}
+@media (min-width: 1024px) {
+  /* DESKTOP - Layout completo y centrado */
+  .cuerpo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* CENTRAR VERTICALMENTE */
+    gap: 25px;
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
-#Istagram {
+  .imagen_letra {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 400px; /* MÁS ANCHO PARA ACOMODAR REDES SOCIALES */
+    min-width: 300px; /* ANCHO MÍNIMO PARA ASEGURAR VISIBILIDAD */
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* CENTRAR VERTICALMENTE TODO EL CONTENIDO */
+    align-items: center;
+    padding: 2.5rem; /* PADDING MÁS AMPLIO */
+    min-height: 350px; /* ALTURA MÍNIMA PARA MEJOR DISTRIBUCIÓN */
+  }
+
+  .imagen_perfil {
+    margin: 1rem auto;
+  }
+
+  .redes-sociales-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 90px 0px 5px 0px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 140px;
-    top: 130px;
-    transform: scale(1.2) rotate(180deg); 
-    border-top: solid 5px #F20587;/* Usa transform para aplicar scale y rotate */
-    
-}
+    margin: 1rem 0;
+    flex-wrap: wrap; /* PERMITIR WRAP SI ES NECESARIO */
+    gap: 1rem; /* ESPACIO MÁS AMPLIO ENTRE ICONOS */
+  }
 
-#Istagram::before {
-    content: "";
-    background-image: url(../imagenes/Instagram.svg);
-    background-size: cover;
-    width: 35px;
-    height: 35px;
-    display: flex;  
-    justify-content: space-between; 
-    align-items:flex-start; 
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    
-
-    
-}
-
-#Telegram {
+  .redes-sociales-container > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 90px 0px 5px 0px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 23px;
-    top: 130px;
-    transform: scale(1.2) rotate(270deg); /* Usa transform para aplicar scale y rotate */
-    border-top: solid 5px #1FA2BF;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 300px; /* ANCHO CONTROLADO */
+  }
+
+  .presentacion-contacto {
+    flex: 1;
+    min-width: 450px;
+    max-width: 850px;
+    order: 2;
+    display: flex;
+    justify-content: center;
+  }
+}
+.imagen_letra {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* EMPEZAR DESDE ARRIBA PERO CENTRAR CONTENIDO */
+    min-height: 220px; /* ALTURA MÍNIMA REDUCIDA PARA COMPACTAR */
+  }
+      .presentacion-contacto {
+
+    padding: 0.6rem;
+    border-radius: 1rem;
+
+
+  }
+
+/* —— Animación de la imagen de perfil —— */
+@keyframes perfilAnim {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 30px rgba(0,255,0,0.2);
+  }
+  50% {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 0 40px rgba(0,255,0,0.3);
+  }
 }
 
-#Telegram::before {
-    content: "";
-    background-image: url(../imagenes/Telegram.svg);
-    background-size: cover;
-    width: 35px;
-    height: 35px;
-    display: flex;  
-    justify-content: center; 
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    
-    
+/* —— Imagen de perfil responsiva y animada —— */
+.imagen_perfil {
+  width: clamp(120px, 40vw, 250px);
+  height: auto;
+  border: 2px solid lime;
+  border-radius: 50%;
+  margin: 1rem auto;
+  animation: perfilAnim 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 30px rgba(0,255,0,0.2);
+}
+
+/* FOTO MÁS GRANDE Y SUBIDA EN PANTALLAS PEQUEÑAS */
+@media (max-width: 599px) {
+  .cuerpo {
+    padding: 0.5rem; /* PADDING REDUCIDO PARA SUBIR TODO EL CONTENIDO */
+  }
+
+  .imagen_perfil {
+    width: clamp(140px, 45vw, 180px); /* MÁS GRANDE EN MÓVILES PARA MEJOR VISIBILIDAD */
+    margin: 0.2rem auto 0 auto; /* ELIMINAR MARGEN INFERIOR PARA PEGAR REDES */
+  }
+
+  .imagen_letra {
+    padding: 0.3rem 0.8rem 0.2rem 0.8rem; /* PADDING ULTRA-REDUCIDO */
+  }
+
+  /* CONSOLIDAR TODOS LOS ESTILOS DE REDES SOCIALES EN MÓVILES */
+  .redes-sociales-container {
+    margin: -1.5rem auto 2.5rem auto; /* SUBIR MÁS LAS REDES SOCIALES */
+    gap: 0.2rem; /* ESPACIO ULTRA-REDUCIDO ENTRE ICONOS */
+    flex-wrap: wrap !important; /* PERMITIR WRAP PARA MEJOR ADAPTABILIDAD */
+    justify-content: center !important; /* CENTRAR SIEMPRE */
+  }
+
+  .redes-sociales-container > div {
+    flex-wrap: wrap !important; /* PERMITIR WRAP PARA MEJOR ADAPTABILIDAD */
+    justify-content: center !important; /* CENTRAR SIEMPRE */
+    white-space: normal !important; /* PERMITIR QUEBRAR LÍNEAS */
+  }
+
+  .redes-sociales-container a,
+  .redes-sociales-container button {
+    flex-shrink: 0 !important; /* NO PERMITIR QUE SE ENCOJAN */
+  }
+}
+
+/* —— Contenedor de redes sociales (solo visible en móviles) —— */
+.redes-sociales-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem; /* REDUCIDO PARA OPTIMIZAR ESPACIO */
+  margin: 0.1rem 0 1rem 0; /* Pegado a la foto arriba */
+  flex-wrap: wrap; /* PERMITIR WRAP PARA MEJOR ADAPTABILIDAD */
+  white-space: normal; /* PERMITIR QUEBRAR LÍNEAS */
+  align-items: center; /* ALINEAR VERTICALMENTE */
+  padding: 0 5px; /* PADDING PARA EVITAR CORTE EN BORDES */
+}
+
+/* ASEGURAR QUE LOS ELEMENTOS INTERNOS NO SE SALGAN DEL FLUJO */
+.redes-sociales-container > div {
+  display: flex;
+  flex-wrap: wrap !important; /* PERMITIR WRAP PARA MEJOR ADAPTABILIDAD */
+  white-space: normal !important; /* PERMITIR QUEBRAR LÍNEAS */
+  align-items: center; /* ALINEAR VERTICALMENTE */
+  justify-content: center; /* CENTRAR EL CONTENIDO */
+  width: 100%; /* OCUPAR TODO EL ANCHO DISPONIBLE */
+  padding: 0; /* SIN PADDING INTERNO */
+}
+
+.redes-sociales-container a,
+.redes-sociales-container button {
+  flex-shrink: 0 !important; /* NO PERMITIR QUE SE ENCOGAN */
+  display: inline-flex !important; /* MANTENER EN LÍNEA */
+  align-items: center; /* ALINEAR VERTICALMENTE */
+  justify-content: center; /* CENTRAR EL CONTENIDO */
+}
+
+/* ESTOS ESTILOS YA ESTÁN CONSOLIDADOS EN EL MEDIA QUERY ANTERIOR */
+
+/* —— Redes sociales dentro de imagen_letra (solo visible en desktop) —— */
+.imagen_letra .redes-sociales-container {
+  display: none; /* Oculto por defecto en móviles */
+  margin-top: 0.1rem; /* Pegado a la foto */
+  flex-wrap: nowrap; /* ASEGURAR UNA SOLA LÍNEA */
+  justify-content: center; /* CENTRAR EL CONTENIDO */
+}
+
+.imagen_letra .redes-sociales-container > div {
+  display: flex;
+  flex-wrap: nowrap !important; /* ASEGURAR UNA SOLA LÍNEA */
+  white-space: nowrap !important; /* MANTENER EN UNA LÍNEA */
+  align-items: center; /* ALINEAR VERTICALMENTE */
+  justify-content: center; /* CENTRAR EL CONTENIDO */
+  width: 100%; /* OCUPAR TODO EL ANCHO DISPONIBLE */
+}
+
+.imagen_letra .redes-sociales-container a,
+.imagen_letra .redes-sociales-container button {
+  flex-shrink: 0 !important; /* NO PERMITIR QUE SE ENCOGAN */
+  display: inline-flex !important; /* MANTENER EN LÍNEA */
+  align-items: center; /* ALINEAR VERTICALMENTE */
+  justify-content: center; /* CENTRAR EL CONTENIDO */
+}
+
+/* —— 2) Tablet en adelante (>=600px): dos columnas iguales —— */
+@media (min-width: 600px) {
+  .cuerpo {
+    flex-direction: row-reverse;
+    align-items: center;       /* CENTRAR VERTICALMENTE LOS ELEMENTOS */
+    justify-content: center;   /* CENTRAR HORIZONTALMENTE */
+    padding: 2rem;
+  }
+  .cuerpo > * {
+    flex: 1;                   /* mismo ancho en cada columna */
+    width: auto;
+    display: flex;
+    justify-content: center;   /* ASEGURAR CENTRADO HORIZONTAL */
+    align-items: center;       /* ASEGURAR CENTRADO VERTICAL */
+  }
+  
+  /* En pantallas grandes, ocultamos el contenedor separado */
+  .redes-sociales-container {
+    display: none;
+  }
+  
+  /* Asegurar que la imagen se mantenga centrada */
+  .imagen_letra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* CENTRAR VERTICALMENTE */
+    align-items: center;     /* CENTRAR HORIZONTALMENTE */
+    min-height: 320px;      /* ALTURA MÍNIMA PARA BUENA DISTRIBUCIÓN */
+  }
+
+  .imagen_perfil {
+    margin: 1rem auto; /* ASEGURAR MARGEN AUTO PARA CENTRADO */
+  }
+
+  /* En pantallas grandes, mostramos las redes dentro de imagen_letra */
+  .imagen_letra .redes-sociales-container {
+    display: flex;
+    margin-top: 1rem; /* ESPACIO MODERADO DE LA FOTO */
+    gap: 1rem; /* ESPACIO MÁS AMPLIO */
+    flex-wrap: wrap; /* PERMITIR WRAP SI ES NECESARIO */
+    justify-content: center; /* PERFECTAMENTE CENTRADO */
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem; /* PADDING SIMÉTRICO */
+    min-height: 60px; /* ALTURA MÍNIMA PARA EVITAR COMPRENSIÓN */
+  }
+
+  .imagen_letra .redes-sociales-container > div {
+    display: flex;
+    justify-content: center; /* CENTRADO PERFECTO */
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 320px; /* ANCHO OPTIMIZADO PARA 5 ICONOS */
+  }
+
+
+  .imagen_letra .redes-sociales-container a,
+  .imagen_letra .redes-sociales-container button {
+    flex-shrink: 0 !important; /* NO PERMITIR QUE SE ENCOGAN */
+  }
+}
+
+/* —— 3) Ajustes para pantallas grandes (>=1080px) —— */
+@media (min-width: 1080px) {
+  .imagen_letra {
+   
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .imagen_perfil {
+    margin: 0.5rem auto 0 auto; /* Menos margen abajo para pegar las redes */
+  }
+  
+  .presentacion-contacto {
+   
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+  }
+  
+  .imagen_letra .redes-sociales-container {
+    margin-top: 0; /* Sin margen, pegadas a la foto */
+    gap: 1rem;
+    flex-wrap: nowrap; /* ASEGURAR UNA SOLA LÍNEA */
+    justify-content: center; /* CENTRAR EL CONTENIDO */
+  }
+
+
+  .imagen_letra .redes-sociales-container a,
+  .imagen_letra .redes-sociales-container button {
+    flex-shrink: 0 !important; /* NO PERMITIR QUE SE ENCOGAN */
+  }
+}
+
+/* —— 4) Ajustes para pantallas pequeñas (mobile-first) —— */
+@media (max-width: 599px) {
+  .cuerpo {
+    flex-direction: column;
+    gap: 1rem; /* AUMENTAR GAP PARA COMPENSAR SEPARACIÓN */
+    padding: 0.3rem 1rem 1rem 1rem; /* PADDING REDUCIDO */
+    min-height: 100vh; /* ALTURA MÍNIMA PARA OCUPAR TODA LA PANTALLA */
+  }
+  
+  .imagen_letra {
+    padding: 0.3rem 0.8rem 0.2rem 0.8rem; /* PADDING ULTRA-REDUCIDO */
+    order: 1; /* Primero la imagen */
+    min-height: 160px; /* ALTURA MÍNIMA ULTRA-REDUCIDA */
+  }
+  
+  .imagen_perfil {
+    margin: 0 auto 0.1rem auto; /* MARGEN ULTRA-REDUCIDO */
+  }
+  
+  /* En móviles, mostramos el contenedor separado */
+  .redes-sociales-container {
+    order: 2; /* Segundo las redes sociales */
+    margin: 0 auto 0.2rem auto; /* MARGEN ULTRA-REDUCIDO ANTES DE LA TARJETA */
+    gap: 0.2rem; /* ESPACIO ULTRA-REDUCIDO ENTRE ICONOS */
+    display: flex; /* Aseguramos que esté visible */
+    justify-content: center; /* Centrar contenido */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Ocupar todo el ancho */
+    flex-wrap: nowrap !important; /* EVITAR QUE SE DIVIDAN EN MÚLTIPLES LÍNEAS */
+    white-space: nowrap !important; /* MANTENER TODO EN UNA LÍNEA */
+  }
+
+  .redes-sociales-container > div {
+    flex-wrap: nowrap !important; /* ASEGURAR UNA SOLA LÍNEA */
+    justify-content: center !important; /* CENTRAR SIEMPRE */
+    white-space: nowrap !important; /* MANTENER EN UNA LÍNEA */
+  }
+
+  .redes-sociales-container a,
+  .redes-sociales-container button {
+    flex-shrink: 0 !important; /* NO PERMITIR QUE SE ENCOGAN */
+  }
+  
+  .presentacion-contacto {
+    order: 3; /* Tercero el contenedor de cristal */
+    padding: 0.5rem 0.8rem 1rem 0.8rem; /* PADDING ULTRA-REDUCIDO */
+    margin-top: 0; /* Sin separación del contenido de cristal */
+  }
+}
+
+/* PANTALLAS SUPER PEQUEÑAS - SUBIR AÚN MÁS LAS REDES SOCIALES */
+@media (max-width: 320px) {
+  .redes-sociales-container {
+    margin: -2rem auto 0 auto; /* SUBIR PERO SIN MARGEN INFERIOR PARA PEGAR */
+    gap: 0.15rem; /* ESPACIO AÚN MÁS REDUCIDO ENTRE ICONOS */
+  }
+
+  .redes-sociales-container > div {
+    gap: 0.15rem; /* GAP MÍNIMO ENTRE ICONOS */
+  }
+
+  .imagen_perfil {
+    margin: 0.1rem auto 0 auto; /* SIN MARGEN INFERIOR PARA PEGAR REDES */
+  }
+
+  .imagen_letra {
+    padding: 0.2rem 0.6rem 0.1rem 0.6rem; /* PADDING ULTRA-REDUCIDO */
+    min-height: 140px; /* ALTURA MÍNIMA ULTRA-REDUCIDA */
+  }
+
+  .presentacion-contacto {
+    padding: 0.4rem 0.6rem 0.8rem 0.6rem; /* PADDING ULTRA-REDUCIDO */
+  }
 }

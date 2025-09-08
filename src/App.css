@@ -1,7 +1,30 @@
+/* App.css */
+
+/* 1. _No_ fijas el height al 100% en #root ni en body */
 #root {
   width: 100%;
-  height: 100vh;
-  background-color: "";
   margin: 0;
+  /* quita height: 100% */
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Deja que crezcan con el contenido */
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden; /* opcional: evita scroll horizontal */
+  overflow-y: auto;   /* aquí sí el scroll vertical único */
+}
+
+/* 2. .layoud gestiona el scroll vertical */
+.layoud {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 100vh garantiza que ocupe al menos la pantalla */
+  min-height: 100vh;
+  /* deja que el body haga el scroll */
+  overflow: visible;
+}

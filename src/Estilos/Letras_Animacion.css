@@ -1,0 +1,1172 @@
+/* LETRAS ANIMADAS - ESTILO PROFESIONAL Y ELEGANTE */
+/* Diseño moderno con efectos de cristal y animaciones suaves */
+
+/* ===========================================
+   CONTENEDOR PRINCIPAL - EFECTO CRISTAL
+   =========================================== */
+
+.texto-animado-container {
+  width: 100%;
+  max-width: 100%; /* USAR 100% PARA SER MÁS FLEXIBLE */
+  margin: -1.5rem 0 2rem 0; /* ELIMINAR MARGEN AUTO PARA MEJOR CONTROL */
+  padding: 0.5rem 1rem; /* REDUCIR PADDING PARA MEJOR AJUSTE */
+  position: relative;
+  z-index: 5; /* Z-INDEX MÁS BAJO PARA QUE EL MENÚ ESTÉ POR ENCIMA */
+  display: block; /* Permite que el contenido se adapte y pase a siguiente línea si es necesario */
+  word-wrap: break-word; /* Permite que el texto largo se divida */
+  overflow-wrap: break-word; /* Compatibilidad adicional */
+  overflow: visible; /* ASEGURAR QUE EL CONTENIDO NO SE OCULTE */
+  min-height: 100px; /* ALTURA MÍNIMA ORIGINAL */
+  box-sizing: border-box; /* ASEGURAR QUE EL PADDING ESTÉ INCLUIDO EN EL ANCHO */
+}
+
+/* Fondo cristal con blur */
+.contenido-cristal {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.5rem 2.5rem 2.5rem 2.5rem; /* PADDING ORIGINAL */
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: visible; /* CAMBIADO: de hidden a visible para no ocultar el texto */
+  min-height: 150px; /* ALTURA MÍNIMA ORIGINAL */
+}
+
+/* Efecto de borde brillante */
+.contenido-cristal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0; transform: translateX(-100%); }
+  50% { opacity: 1; transform: translateX(0); }
+}
+
+/* ===========================================
+   SALUDO - TEXTO ESTÁTICO ELEGANTE
+   =========================================== */
+
+.saludo {
+  text-align: center;
+  margin-bottom: 0.2rem; /* AÚN MÁS REDUCIDO PARA PEGAR MÁS */
+  position: relative;
+}
+
+.saludo h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* REDUCIDO: de 2rem/3.5rem a 1.5rem/2.5rem */
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.1);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    #ffffff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInGlow 2s ease-out forwards;
+}
+
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ===========================================
+   TEXTO ANIMADO - MÁQUINA DE ESCRIBIR PROFESIONAL
+   =========================================== */
+
+/* CONTENEDOR PRINCIPAL ULTRA-ESTABLE */
+.texto-animado-contenedor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* MANTENER EN UNA SOLA LÍNEA */
+  white-space: nowrap; /* NO ROMPER LÍNEA */
+  margin: -0.5rem auto 1rem auto; /* MÁRGENES AÚN MÁS REDUCIDOS PARA PEGAR TODO */
+  overflow: visible;
+  width: fit-content; /* AJUSTAR AL CONTENIDO */
+  max-width: 100%;
+
+  /* PROPIEDADES DE ESTABILIDAD ABSOLUTA */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  min-height: 60px;
+}
+
+/* ESPACIO FIJO PARA "FRONT END" - SOLUCIÓN AL BAILOTEO */
+.espacio-fijo-front-end {
+  display: inline-block;
+  position: relative;
+  width: clamp(120px, 20vw, 160px); /* ANCHO AUMENTADO PARA QUE QUEPA "FRONT END" COMPLETO */
+  min-width: clamp(120px, 20vw, 160px);
+  max-width: clamp(120px, 20vw, 160px);
+  height: auto;
+  overflow: hidden; /* IMPORTANTE: OCULTA LO QUE SE SALE */
+  white-space: nowrap;
+  vertical-align: baseline; /* ALINEACIÓN PERFECTA */
+  margin: 0;
+  padding: 0;
+  background: transparent; /* FONDO TRANSPARENTE PARA EVITAR INTERFERENCIAS */
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  flex-shrink: 0; /* NO SE ENCOGE */
+}
+
+/* PREFIJO COMPLETAMENTE ESTÁTICO */
+.texto-prefijo-estatico {
+  display: inline-block;
+  font-family: inherit;
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  color: #ffffff;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  vertical-align: baseline; /* ASEGURAR ALINEACIÓN PERFECTA */
+  background: transparent; /* ASEGURAR FONDO TRANSPARENTE */
+
+  /* COMPLETAMENTE INMÓVIL Y VISIBLE */
+  animation: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 3;
+  visibility: visible;
+  flex-shrink: 0; /* NO SE ENCOGE */
+  margin: 0 0.8rem 0 0; /* ESPACIO A LA DERECHA */
+  padding: 0;
+}
+
+/* TEXTO ANIMADO DENTRO DEL ESPACIO FIJO */
+.texto-animado {
+  display: inline;
+  font-family: inherit;
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  color: #00ff7f;
+  white-space: nowrap;
+  text-shadow:
+    0 0 15px rgba(0, 255, 127, 0.8),
+    0 0 25px rgba(0, 255, 127, 0.5),
+    0 0 35px rgba(0, 255, 127, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.8); /* SOMBRA NEGRA PARA MEJOR CONTRASTE */
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 3;
+  opacity: 1;
+  visibility: visible;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent; /* ASEGURAR FONDO TRANSPARENTE */
+  animation: fadeInInline 1.5s ease-out 1s both;
+}
+
+/* CURSOR DENTRO DEL ESPACIO FIJO */
+.cursor {
+  display: inline;
+  font-family: inherit;
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  color: #00ff7f;
+  margin-left: 2px;
+  text-shadow:
+    0 0 15px rgba(0, 255, 127, 0.9),
+    0 0 25px rgba(0, 255, 127, 0.6),
+    0 1px 3px rgba(0, 0, 0, 0.8); /* SOMBRA NEGRA PARA MEJOR CONTRASTE */
+  position: relative;
+  z-index: 3;
+  opacity: 1;
+  visibility: visible;
+  margin: 0 0 0 2px;
+  padding: 0;
+  line-height: 1;
+  background: transparent; /* ASEGURAR FONDO TRANSPARENTE */
+  animation:
+    blink 1.2s infinite,
+    fadeInCursor 1.5s ease-out 1.5s both;
+}
+
+/* ANIMACIONES PARA LA MÁQUINA DE ESCRIBIR */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeInCursor {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ANIMACIÓN SOLO PARA LA CAJITA DE "FRONT END" */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ANIMACIÓN PARA LA CAJA COMPLETA */
+@keyframes fadeInBox {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ANIMACIÓN PARA TEXTO INLINE */
+@keyframes fadeInInline {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* Texto COMPLETAMENTE ESTÁTICO (Desarrollador) - SIN ANIMACIÓN */
+.texto-estatico {
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.05em;
+
+  /* COMPLETAMENTE ESTÁTICO - SIN ANIMACIÓN */
+  position: relative;
+  display: inline-block;
+  animation: none; /* REMOVER ANIMACIÓN */
+  transform: none;
+  opacity: 1; /* SIEMPRE VISIBLE */
+}
+
+/* Mantener compatibilidad con .texto-blanco por si se usa en otro lugar */
+.texto-blanco {
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.05em;
+  position: relative;
+  display: inline-block;
+  animation: none; /* SIN ANIMACIÓN */
+  transform: none;
+  opacity: 1;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+/* ===========================================
+   PÁRRAFO DE PRESENTACIÓN - TEXTO ELEGANTE
+   =========================================== */
+
+.parrafo {
+  margin-bottom: 0.2rem; /* MARGIN MÍNIMO PARA PEGAR A LOS BOTONES */
+  text-align: center;
+  position: relative;
+}
+
+.intro-text {
+  font-size: clamp(0.85rem, 2vw, 1.1rem); /* REDUCIDO: de 1rem/1.4rem a 0.85rem/1.1rem */
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  animation: fadeInUp 2s ease-out 2s both;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto; /* Permite separación de palabras con guiones */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nombre destacado */
+.intro-text__name {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow:
+    0 0 15px rgba(255, 255, 255, 0.3),
+    0 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: inline-block;
+}
+
+.intro-text__name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00ff7f, #00ffff);
+  border-radius: 1px;
+  animation: underlineGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes underlineGlow {
+  0% {
+    opacity: 0.6;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Rol profesional */
+.intro-text__role {
+  color: #00ff7f;
+  font-weight: 500;
+  text-shadow:
+    0 0 10px rgba(0, 255, 127, 0.5),
+    0 0 20px rgba(0, 255, 127, 0.3);
+}
+
+/* ===========================================
+   BOTONES - DISEÑO PROFESIONAL
+   =========================================== */
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem; /* REDUCIDO PARA PEGAR A LOS BOTONES */
+}
+
+.Boton_CV,
+.Boton_Mas {
+  padding: 0.8rem 1.5rem; /* REDUCIDO: de 1rem 2rem a 0.8rem 1.5rem */
+  border: none;
+  border-radius: 50px;
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem); /* REDUCIDO: de 0.9rem/1.1rem a 0.8rem/0.95rem */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: 120px; /* REDUCIDO: de 140px a 120px */
+  text-align: center;
+}
+
+.Boton_CV {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  box-shadow:
+    0 4px 15px rgba(102, 126, 234, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Boton_CV:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px rgba(102, 126, 234, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Boton_Mas {
+  background: linear-gradient(135deg, #00ff7f 0%, #00ffff 100%);
+  color: #1a1a1a;
+  box-shadow:
+    0 4px 15px rgba(0, 255, 127, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Boton_Mas:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px rgba(0, 255, 127, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de brillo en hover */
+.Boton_CV::before,
+.Boton_Mas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent);
+  transition: left 0.5s;
+}
+
+.Boton_CV:hover::before,
+.Boton_Mas:hover::before {
+  left: 100%;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN - TODOS LOS TAMAÑOS
+   =========================================== */
+
+/* ELIMINADO: Breakpoint duplicado que causaba conflictos */
+
+/* TABLETS (1024px - 768px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .texto-animado-container {
+    margin: 0.3rem auto 2rem auto; /* Margen superior reducido */
+    padding: 1.5rem;
+  }
+
+  .contenido-cristal {
+    padding: 0.5rem 2rem 2rem 2rem; /* PADDING ORIGINAL */
+  }
+  
+  .saludo h2 {
+    font-size: 2.1rem; /* REDUCIDO: de 2.8rem a 2.1rem */
+  }
+  
+  .texto-prefijo-estatico,
+  .texto-animado,
+  .cursor {
+    font-size: 1.3rem;
+  }
+
+  .espacio-fijo-front-end {
+    width: clamp(125px, 20vw, 165px); /* ANCHO AUMENTADO PARA TABLETS */
+    min-width: clamp(125px, 20vw, 165px);
+    max-width: clamp(125px, 20vw, 165px);
+  }
+
+  .intro-text {
+    font-size: 0.95rem; /* REDUCIDO: de 1.1rem a 0.95rem */
+  }
+  
+  .botones {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .Boton_CV,
+  .Boton_Mas {
+    padding: 0.8rem 1.8rem; /* REDUCIDO: de 0.9rem 2rem a 0.8rem 1.8rem */
+    min-width: 140px; /* REDUCIDO: de 160px a 140px */
+  }
+}
+
+/* TABLETS PEQUEÑAS (768px - 600px) */
+@media (max-width: 768px) and (min-width: 601px) {
+  .texto-animado-container {
+    margin: 0.3rem auto 2rem auto; /* Margen superior reducido */
+    padding: 0.8rem; /* PADDING REDUCIDO PARA MÁS ANCHO */
+    max-width: 95vw; /* AÚN MÁS ANCHO EN TABLETS PEQUEÑAS */
+  }
+
+  .contenido-cristal {
+    padding: 0.3rem 1rem 1.5rem 1rem; /* PADDING LATERAL REDUCIDO PARA MÁS ANCHO */
+  }
+  
+  .saludo h2 {
+    font-size: 1.9rem; /* REDUCIDO: de 2.4rem a 1.9rem */
+  }
+
+  .espacio-fijo-front-end {
+    width: clamp(115px, 18vw, 145px); /* ANCHO AUMENTADO PARA TABLETS PEQUEÑAS */
+    min-width: clamp(115px, 18vw, 145px);
+    max-width: clamp(115px, 18vw, 145px);
+  }
+  
+  .intro-text {
+    font-size: 0.9rem; /* REDUCIDO: de 1rem a 0.9rem */
+  }
+  
+  .botones {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .Boton_CV,
+  .Boton_Mas {
+    padding: 0.7rem 1.6rem; /* REDUCIDO: de 0.8rem 1.8rem a 0.7rem 1.6rem */
+    min-width: 130px; /* REDUCIDO: de 150px a 130px */
+  }
+}
+
+/* MÓVILES GRANDES (600px - 480px) */
+@media (max-width: 600px) and (min-width: 481px) {
+  .texto-animado-container {
+    margin: -0.5rem 0 2rem 0; /* MARGEN ORIGINAL */
+    padding: 0.6rem; /* PADDING AJUSTADO */
+    max-width: 100%; /* ANCHO COMPLETO */
+    width: 100%; /* SIN RESTRICCIONES */
+    min-height: 200px; /* ALTURA MÍNIMA AUMENTADA */
+    position: static; /* POSICIÓN NORMAL */
+    transform: none; /* SIN TRANSFORMACIONES */
+  }
+
+  .contenido-cristal {
+    padding: 0.2rem 0.8rem 1.2rem 0.8rem; /* PADDING LATERAL REDUCIDO PARA MÁS ANCHO */
+  }
+  
+  .saludo h2 {
+    font-size: 1.6rem; /* REDUCIDO: de 2rem a 1.6rem */
+  }
+  
+  .espacio-fijo-front-end {
+    width: clamp(110px, 16vw, 130px); /* ANCHO AUMENTADO PARA MÓVILES GRANDES */
+    min-width: clamp(110px, 16vw, 130px);
+    max-width: clamp(110px, 16vw, 130px);
+  }
+
+  .intro-text {
+    font-size: 0.85rem; /* REDUCIDO: de 0.95rem a 0.85rem */
+    text-align: left;
+  }
+  
+  .botones {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .Boton_CV,
+  .Boton_Mas {
+    padding: 0.7rem 1.4rem; /* REDUCIDO: de 0.8rem 1.6rem a 0.7rem 1.4rem */
+    min-width: 120px; /* REDUCIDO: de 140px a 120px */
+    font-size: 0.9rem; /* REDUCIDO: de 1rem a 0.9rem */
+  }
+}
+
+/* MÓVILES MEDIANOS (480px - 360px) */
+@media (max-width: 480px) and (min-width: 361px) {
+  .texto-animado-container {
+    margin: -0.3rem auto 2rem auto; /* MARGEN ORIGINAL */
+    padding: 0.5rem 1rem; /* PADDING MÁS AMPLIO */
+    max-width: 100%; /* ANCHO COMPLETO */
+    width: 100%; /* SIN RESTRICCIONES */
+    min-height: 220px; /* ALTURA MÍNIMA AUMENTADA */
+    position: static; /* POSICIÓN NORMAL */
+    transform: none; /* SIN TRANSFORMACIONES */
+  }
+
+  .contenido-cristal {
+    padding: 0.8rem 1.2rem 1.5rem 1.2rem; /* PADDING INTERIOR MÁS AMPLIO */
+  }
+  
+  .saludo h2 {
+    font-size: 2rem; /* FUENTE MÁS GRANDE PARA MEJOR VISIBILIDAD */
+  }
+  
+  .espacio-fijo-front-end {
+    width: clamp(105px, 15vw, 125px); /* ANCHO AUMENTADO PARA MÓVILES MEDIANOS */
+    min-width: clamp(105px, 15vw, 125px);
+    max-width: clamp(105px, 15vw, 125px);
+  }
+
+  .intro-text {
+    font-size: 0.8rem; /* REDUCIDO: de 0.9rem a 0.8rem */
+  }
+  
+  .botones {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .Boton_CV,
+  .Boton_Mas {
+    padding: 0.6rem 1.3rem; /* REDUCIDO: de 0.7rem 1.4rem a 0.6rem 1.3rem */
+    min-width: 110px; /* REDUCIDO: de 130px a 110px */
+    font-size: 0.85rem; /* REDUCIDO: de 0.95rem a 0.85rem */
+  }
+}
+
+/* MÓVILES PEQUEÑOS (360px - 320px) */
+@media (max-width: 360px) {
+  .texto-animado-container {
+    margin: 0 auto 2rem auto; /* MARGEN ORIGINAL */
+    padding: 0.4rem 0.8rem; /* PADDING MÁS AMPLIO PARA APROVECHAR ESPACIO */
+    max-width: 100%; /* ANCHO COMPLETO */
+    width: 100%; /* SIN RESTRICCIONES */
+    min-height: 240px; /* ALTURA MÍNIMA AUMENTADA */
+    position: static; /* POSICIÓN NORMAL */
+    transform: none; /* SIN TRANSFORMACIONES */
+  }
+
+  .contenido-cristal {
+    padding: 0.8rem 1rem 1.8rem 1rem; /* PADDING MÁS AMPLIO PARA MEJOR ESPACIADO */
+  }
+  
+  .saludo h2 {
+    font-size: 1.8rem; /* FUENTE MÁS GRANDE PARA MEJOR VISIBILIDAD */
+  }
+
+  .texto-animado-contenedor {
+    width: fit-content; /* AJUSTAR AL CONTENIDO EN MÓVILES PEQUEÑOS */
+    min-width: 180px; /* MÍNIMO PARA EVITAR QUE SE ROMPA */
+    flex-wrap: wrap; /* PERMITIR WRAP EN CASO EXTREMO */
+  }
+
+  .espacio-fijo-front-end {
+    width: clamp(100px, 14vw, 115px); /* ANCHO AUMENTADO PARA MÓVILES PEQUEÑOS */
+    min-width: clamp(100px, 14vw, 115px);
+    max-width: clamp(100px, 14vw, 115px);
+  }
+
+  .intro-text {
+    font-size: 0.75rem; /* REDUCIDO: de 0.85rem a 0.75rem */
+  }
+  
+  .botones {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .Boton_CV,
+  .Boton_Mas {
+    padding: 0.5rem 1.1rem; /* REDUCIDO: de 0.6rem 1.2rem a 0.5rem 1.1rem */
+    min-width: 100px; /* REDUCIDO: de 120px a 100px */
+    font-size: 0.8rem; /* REDUCIDO: de 0.9rem a 0.8rem */
+  }
+}
+
+/* MÓVILES MUY PEQUEÑOS (MENOS DE 320px) */
+@media (max-width: 320px) {
+  .texto-animado-container {
+    max-width: 100vw; /* ANCHO COMPLETO EN PANTALLAS MUY PEQUEÑAS */
+  }
+
+  .texto-animado-contenedor {
+    flex-direction: column; /* APILAR VERTICALMENTE EN PANTALLAS MUY PEQUEÑAS */
+    align-items: flex-start;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .espacio-fijo-front-end {
+    width: 100%; /* ANCHO COMPLETO EN PANTALLAS MUY PEQUEÑAS */
+    min-width: 100%;
+    max-width: 100%;
+    margin-top: 0.5rem; /* ESPACIO ENTRE LÍNEAS */
+    min-height: 30px; /* ALTURA MÍNIMA PARA QUE QUEPA EL TEXTO */
+  }
+}
+
+/* ===========================================
+   ANIMACIONES GLOBALES Y OPTIMIZACIONES
+   =========================================== */
+
+/* Optimizaciones de rendimiento */
+.texto-animado-container *,
+.contenido-cristal *,
+.saludo *,
+.texto-animado *,
+.parrafo *,
+.botones * {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Efectos de hover sutiles */
+.texto-animado-container:hover .contenido-cristal {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Soporte para navegadores antiguos */
+@supports not (backdrop-filter: blur(20px)) {
+  .contenido-cristal {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+  .contenido-cristal {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #000;
+  }
+
+  .intro-text {
+    color: #000;
+  }
+  
+  .saludo h2 {
+    color: #000;
+  }
+}
+
+/* Modo de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===========================================
+   PANTALLAS GRANDES - ESPACIADO ORIGINAL
+   =========================================== */
+
+@media (min-width: 1201px) {
+  /* Restaurar espaciado original para pantallas grandes */
+  .saludo {
+    margin-bottom: 2.5rem; /* ESPACIADO ORIGINAL PARA PANTALLAS GRANDES */
+  }
+
+  .texto-animado-contenedor {
+    margin: 0 auto 2.5rem auto; /* ESPACIADO ORIGINAL PARA PANTALLAS GRANDES */
+  }
+  
+  .parrafo {
+    margin-bottom: 2.5rem; /* ESPACIADO ORIGINAL PARA PANTALLAS GRANDES */
+  }
+  
+  .botones {
+    margin-top: 2rem; /* ESPACIADO ORIGINAL PARA PANTALLAS GRANDES */
+  }
+}
+
+/* TABLETS GRANDES - ESPACIADO INTERMEDIO */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  /* Espaciado intermedio para tablets grandes */
+  .saludo {
+    margin-bottom: 2rem; /* ESPACIADO INTERMEDIO PARA TABLETS */
+  }
+
+  .texto-animado-contenedor {
+    margin: -0.2rem auto 2rem auto; /* ESPACIADO INTERMEDIO PARA TABLETS */
+  }
+  
+  .parrafo {
+    margin-bottom: 2rem; /* ESPACIADO INTERMEDIO PARA TABLETS */
+  }
+  
+  .botones {
+    margin-top: 1.5rem; /* ESPACIADO INTERMEDIO PARA TABLETS */
+  }
+}
+
+/* ===========================================
+   BOLITA LUMINOSA EN EL BORDE
+   =========================================== */
+
+/* EFECTO DE LLUVIA FUERA DE LA TARJETA - SIMÉTRICO */
+.texto-animado-container::before,
+.texto-animado-container::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.7));
+  border-radius: 50%;
+  box-shadow:
+    0 0 6px rgba(102, 126, 234, 0.8),
+    0 0 12px rgba(102, 126, 234, 0.6),
+    0 0 18px rgba(102, 126, 234, 0.4);
+  animation: rainDrop 3s linear infinite;
+  z-index: 5;
+  left: -25%;
+}
+
+.texto-animado-container::after {
+  left: 125%;
+  animation-delay: -1.5s;
+  width: 8px;
+  height: 8px;
+}
+
+/* TERCERA BOLITA FUERA DE LA TARJETA */
+.contenido-cristal::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -35%;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.6));
+  border-radius: 50%;
+  box-shadow:
+    0 0 5px rgba(102, 126, 234, 0.7),
+    0 0 10px rgba(102, 126, 234, 0.5),
+    0 0 15px rgba(102, 126, 234, 0.3);
+  animation: rainDrop 3.5s linear infinite;
+  animation-delay: -2.5s;
+  z-index: 5;
+}
+
+/* CUARTA BOLITA FUERA DE LA TARJETA */
+.contenido-cristal::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 135%;
+  width: 7px;
+  height: 7px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.5));
+  border-radius: 50%;
+  box-shadow:
+    0 0 4px rgba(102, 126, 234, 0.6),
+    0 0 8px rgba(102, 126, 234, 0.4),
+    0 0 12px rgba(102, 126, 234, 0.2);
+  animation: rainDrop 4s linear infinite;
+  animation-delay: -3s;
+  z-index: 5;
+}
+
+/* QUINTA BOLITA EN ESPACIO VACÍO IZQUIERDO */
+.texto-animado-container {
+  position: relative;
+}
+
+.texto-animado-container::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -55%;
+  width: 5px;
+  height: 5px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.6), rgba(118, 75, 162, 0.4));
+  border-radius: 50%;
+  box-shadow:
+    0 0 3px rgba(102, 126, 234, 0.5),
+    0 0 6px rgba(102, 126, 234, 0.3),
+    0 0 9px rgba(102, 126, 234, 0.1);
+  animation: rainDrop 3.8s linear infinite;
+  animation-delay: -2.8s;
+  z-index: 1;
+}
+
+/* SEXTA BOLITA EN ESPACIO VACÍO DERECHO */
+.contenido-cristal {
+  position: relative;
+}
+
+.contenido-cristal::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 155%;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.6));
+  border-radius: 50%;
+  box-shadow:
+    0 0 5px rgba(102, 126, 234, 0.7),
+    0 0 10px rgba(102, 126, 234, 0.5),
+    0 0 15px rgba(102, 126, 234, 0.3);
+  animation: rainDrop 4.2s linear infinite;
+  animation-delay: -3.5s;
+  z-index: 1;
+}
+
+/* BOLITAS ADICIONALES CON COLOR DEL BOTÓN SABER MÁS (VERDE) */
+.texto-animado-container {
+  position: relative;
+}
+
+/* SÉPTIMA BOLITA VERDE FUERA DE LA TARJETA */
+.texto-animado-container::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -75%;
+  width: 7px;
+  height: 7px;
+  background: linear-gradient(135deg, rgba(0, 255, 127, 0.8), rgba(0, 255, 255, 0.6));
+  border-radius: 50%;
+  box-shadow:
+    0 0 6px rgba(0, 255, 127, 0.8),
+    0 0 12px rgba(0, 255, 127, 0.6),
+    0 0 18px rgba(0, 255, 127, 0.4);
+  animation: rainDrop 3.2s linear infinite;
+  animation-delay: -1.8s;
+  z-index: 3;
+}
+
+/* OCTAVA BOLITA VERDE FUERA DE LA TARJETA */
+.contenido-cristal::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 175%;
+  width: 5px;
+  height: 5px;
+  background: linear-gradient(135deg, rgba(0, 255, 127, 0.7), rgba(0, 255, 255, 0.5));
+  border-radius: 50%;
+  box-shadow:
+    0 0 4px rgba(0, 255, 127, 0.6),
+    0 0 8px rgba(0, 255, 127, 0.4),
+    0 0 12px rgba(0, 255, 127, 0.2);
+  animation: rainDrop 4.5s linear infinite;
+  animation-delay: -2.2s;
+  z-index: 2;
+}
+
+/* BOLITAS ADICIONALES CON COLOR DEL BOTÓN CV (AZUL-PÚRPURA) */
+.texto-animado-container {
+  position: relative;
+}
+
+/* NOVENA BOLITA AZUL FUERA DE LA TARJETA */
+.texto-animado-container::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -95%;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.7));
+  border-radius: 50%;
+  box-shadow:
+    0 0 5px rgba(102, 126, 234, 0.8),
+    0 0 10px rgba(102, 126, 234, 0.6),
+    0 0 15px rgba(102, 126, 234, 0.4);
+  animation: rainDrop 3.8s linear infinite;
+  animation-delay: -2.8s;
+  z-index: 1;
+}
+
+/* DÉCIMA BOLITA AZUL FUERA DE LA TARJETA */
+.contenido-cristal::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 195%;
+  width: 7px;
+  height: 7px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.6));
+  border-radius: 50%;
+  box-shadow:
+    0 0 6px rgba(102, 126, 234, 0.8),
+    0 0 12px rgba(102, 126, 234, 0.6),
+    0 0 18px rgba(102, 126, 234, 0.4);
+  animation: rainDrop 4.2s linear infinite;
+  animation-delay: -3.5s;
+  z-index: 1;
+}
+
+/* ANIMACIÓN DE BOLITAS DE LLUVIA */
+@keyframes rainDrop {
+  0% {
+    top: -30px;
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    top: calc(100% + 30px);
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+/* TABLETS PEQUEÑAS - Layout en fila */
+@media (min-width: 481px) and (max-width: 767px) {
+  .texto-animado-container {
+    margin: -0.5rem auto 2rem auto; /* MARGEN ORIGINAL */
+    padding: 0.6rem; /* PADDING PARA TABLETS */
+    max-width: 100%; /* ANCHO COMPLETO */
+    width: 100%; /* SIN RESTRICCIONES */
+    min-height: 200px; /* ALTURA MÍNIMA */
+    position: static; /* POSICIÓN NORMAL */
+    transform: none; /* SIN TRANSFORMACIONES */
+  }
+}
+
+/* PANTALLAS GRANDES - REDUCIR ANCHO DE LA TARJETA */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .texto-animado-container {
+    max-width: 900px; /* ANCHO MODERADO PARA PANTALLAS GRANDES */
+    margin: -1.5rem auto 2rem auto; /* CENTRAR LA TARJETA */
+  }
+
+  .contenido-cristal {
+    padding: 1rem 1.5rem; /* PADDING INTERMEDIO */
+  }
+}
+
+/* PANTALLAS EXTRA GRANDES - REDUCIR AÚN MÁS EL ANCHO */
+@media (min-width: 1400px) {
+  .texto-animado-container {
+    max-width: 800px; /* REDUCIR ANCHO EN PANTALLAS MUY GRANDES */
+    margin: -1.5rem auto 2rem auto; /* CENTRAR LA TARJETA */
+  }
+
+  .contenido-cristal {
+    padding: 1rem 2rem; /* AJUSTAR PADDING PARA MEJOR APARIENCIA */
+  }
+}
+
+/* RESPONSIVE - MÓVILES PEQUEÑOS Y MEDIANOS - CONFIGURACIÓN ORIGINAL */
+@media (max-width: 480px) {
+  .texto-animado-container {
+    width: 100%; /* ANCHO COMPLETO */
+    max-width: 100%; /* SIN RESTRICCIONES */
+    margin: -1.5rem auto 2rem auto; /* MARGEN ORIGINAL */
+    padding: 0.5rem 1.2rem; /* PADDING MÁS AMPLIO PARA APROVECHAR ESPACIO */
+    position: static; /* POSICIÓN NORMAL */
+    transform: none; /* SIN TRANSFORMACIONES */
+  }
+
+  .contenido-cristal {
+    padding: 1rem 1.5rem; /* PADDING INTERIOR MÁS AMPLIO */
+  }
+}
+
+  .texto-animado-container::before,
+  .texto-animado-container::after {
+    width: 6px;
+    height: 6px;
+    animation-duration: 2.5s; /* MÁS RÁPIDO EN MÓVILES */
+    left: 15%;
+  }
+
+  .texto-animado-container::after {
+    width: 6px;
+    height: 6px;
+    left: 75%;
+  }
+
+  .contenido-cristal::before,
+  .contenido-cristal::after {
+    width: 5px;
+    height: 5px;
+    animation-duration: 2.5s; /* MÁS RÁPIDO EN MÓVILES */
+  }
+
+  .contenido-cristal::after {
+    width: 4px;
+    height: 4px;
+  }
+
+  /* BOLITAS ADICIONALES PARA MÓVILES */
+  .texto-animado-container::before {
+    left: -5%;
+    width: 4px;
+    height: 4px;
+  }
+
+  .contenido-cristal::before {
+    left: 105%;
+    width: 5px;
+    height: 5px;
+  }
+
+  /* NUEVAS BOLITAS VERDES PARA MÓVILES */
+  .texto-animado-container::after {
+    width: 5px;
+    height: 5px;
+    left: -60%;
+  }
+
+  .contenido-cristal::after {
+    width: 4px;
+    height: 4px;
+    left: 140%;
+  }
+
+  /* NUEVAS BOLITAS AZULES PARA MÓVILES */
+  .texto-animado-container::before {
+    width: 4px;
+    height: 4px;
+    left: -80%;
+  }
+
+  .contenido-cristal::before {
+    width: 5px;
+    height: 5px;
+    left: 160%;
+  }
+}
