@@ -2,7 +2,7 @@
 /* Diseño moderno con efectos de cristal y animaciones suaves */
 
 /* ===========================================
-   CONTENEDOR PRINCIPAL - EFECTO CRISTAL
+   CONTENEDOR PRINCIPAL - MISMO ANCHO QUE PROYECTOS
    =========================================== */
 
 .texto-animado-container {
@@ -491,8 +491,6 @@
    RESPONSIVE DESIGN - TODOS LOS TAMAÑOS
    =========================================== */
 
-/* ELIMINADO: Breakpoint duplicado que causaba conflictos */
-
 /* TABLETS (1024px - 768px) */
 @media (max-width: 1024px) and (min-width: 769px) {
   .texto-animado-container {
@@ -503,11 +501,11 @@
   .contenido-cristal {
     padding: 0.5rem 2rem 2rem 2rem; /* PADDING ORIGINAL */
   }
-  
+
   .saludo h2 {
     font-size: 2.1rem; /* REDUCIDO: de 2.8rem a 2.1rem */
   }
-  
+
   .texto-prefijo-estatico,
   .texto-animado,
   .cursor {
@@ -523,7 +521,7 @@
   .intro-text {
     font-size: 0.95rem; /* REDUCIDO: de 1.1rem a 0.95rem */
   }
-  
+
   .botones {
     flex-direction: column;
     align-items: center;
@@ -535,6 +533,7 @@
     padding: 0.8rem 1.8rem; /* REDUCIDO: de 0.9rem 2rem a 0.8rem 1.8rem */
     min-width: 140px; /* REDUCIDO: de 160px a 140px */
   }
+}
 }
 
 /* TABLETS PEQUEÑAS (768px - 600px) */
@@ -548,7 +547,7 @@
   .contenido-cristal {
     padding: 0.3rem 1rem 1.5rem 1rem; /* PADDING LATERAL REDUCIDO PARA MÁS ANCHO */
   }
-  
+
   .saludo h2 {
     font-size: 1.9rem; /* REDUCIDO: de 2.4rem a 1.9rem */
   }
@@ -558,11 +557,11 @@
     min-width: clamp(115px, 18vw, 145px);
     max-width: clamp(115px, 18vw, 145px);
   }
-  
+
   .intro-text {
     font-size: 0.9rem; /* REDUCIDO: de 1rem a 0.9rem */
   }
-  
+
   .botones {
     flex-direction: column;
     gap: 0.8rem;
@@ -590,11 +589,11 @@
   .contenido-cristal {
     padding: 0.2rem 0.8rem 1.2rem 0.8rem; /* PADDING LATERAL REDUCIDO PARA MÁS ANCHO */
   }
-  
+
   .saludo h2 {
     font-size: 1.6rem; /* REDUCIDO: de 2rem a 1.6rem */
   }
-  
+
   .espacio-fijo-front-end {
     width: clamp(110px, 16vw, 130px); /* ANCHO AUMENTADO PARA MÓVILES GRANDES */
     min-width: clamp(110px, 16vw, 130px);
@@ -605,7 +604,7 @@
     font-size: 0.85rem; /* REDUCIDO: de 0.95rem a 0.85rem */
     text-align: left;
   }
-  
+
   .botones {
     flex-direction: column;
     gap: 0.7rem;
@@ -632,13 +631,13 @@
   }
 
   .contenido-cristal {
-    padding: 0.8rem 1.2rem 1.5rem 1.2rem; /* PADDING INTERIOR MÁS AMPLIO */
+    padding: 1rem 1.5rem 2rem 1.5rem; /* PADDING CONSISTENTE CON LAS TARJETAS */
   }
-  
+
   .saludo h2 {
     font-size: 2rem; /* FUENTE MÁS GRANDE PARA MEJOR VISIBILIDAD */
   }
-  
+
   .espacio-fijo-front-end {
     width: clamp(105px, 15vw, 125px); /* ANCHO AUMENTADO PARA MÓVILES MEDIANOS */
     min-width: clamp(105px, 15vw, 125px);
@@ -648,7 +647,7 @@
   .intro-text {
     font-size: 0.8rem; /* REDUCIDO: de 0.9rem a 0.8rem */
   }
-  
+
   .botones {
     flex-direction: column;
     gap: 0.6rem;
@@ -667,7 +666,7 @@
   .texto-animado-container {
     margin: 0 auto 2rem auto; /* MARGEN ORIGINAL */
     padding: 0.4rem 0.8rem; /* PADDING MÁS AMPLIO PARA APROVECHAR ESPACIO */
-    max-width: 100%; /* ANCHO COMPLETO */
+    max-width: 100%; /* OCUPA TODO EL ANCHO COMO LAS TARJETAS DE PROYECTOS */
     width: 100%; /* SIN RESTRICCIONES */
     min-height: 240px; /* ALTURA MÍNIMA AUMENTADA */
     position: static; /* POSICIÓN NORMAL */
@@ -675,9 +674,9 @@
   }
 
   .contenido-cristal {
-    padding: 0.8rem 1rem 1.8rem 1rem; /* PADDING MÁS AMPLIO PARA MEJOR ESPACIADO */
+    padding: 1rem 1.5rem 2rem 1.5rem; /* PADDING CONSISTENTE CON LAS TARJETAS */
   }
-  
+
   .saludo h2 {
     font-size: 1.8rem; /* FUENTE MÁS GRANDE PARA MEJOR VISIBILIDAD */
   }
@@ -697,7 +696,7 @@
   .intro-text {
     font-size: 0.75rem; /* REDUCIDO: de 0.85rem a 0.75rem */
   }
-  
+
   .botones {
     flex-direction: column;
     gap: 0.5rem;
@@ -714,7 +713,14 @@
 /* MÓVILES MUY PEQUEÑOS (MENOS DE 320px) */
 @media (max-width: 320px) {
   .texto-animado-container {
-    max-width: 100vw; /* ANCHO COMPLETO EN PANTALLAS MUY PEQUEÑAS */
+    max-width: 100%; /* OCUPA TODO EL ANCHO COMO LAS TARJETAS DE PROYECTOS */
+    width: 100%; /* ANCHO COMPLETO */
+    margin: 0 auto 2rem auto; /* CENTRADO COMO LAS TARJETAS */
+    padding: 20px; /* MISMO PADDING QUE LAS TARJETAS DE PROYECTOS */
+  }
+
+  .contenido-cristal {
+    padding: 1rem 1.5rem 2rem 1.5rem; /* PADDING CONSISTENTE */
   }
 
   .texto-animado-contenedor {
@@ -811,25 +817,7 @@
   }
 }
 
-/* TABLETS GRANDES - ESPACIADO INTERMEDIO */
-@media (min-width: 1024px) and (max-width: 1200px) {
-  /* Espaciado intermedio para tablets grandes */
-  .saludo {
-    margin-bottom: 2rem; /* ESPACIADO INTERMEDIO PARA TABLETS */
-  }
-
-  .texto-animado-contenedor {
-    margin: -0.2rem auto 2rem auto; /* ESPACIADO INTERMEDIO PARA TABLETS */
-  }
-  
-  .parrafo {
-    margin-bottom: 2rem; /* ESPACIADO INTERMEDIO PARA TABLETS */
-  }
-  
-  .botones {
-    margin-top: 1.5rem; /* ESPACIADO INTERMEDIO PARA TABLETS */
-  }
-}
+/* SOLUCIÓN SIMPLE: LA TARJETA SIEMPRE TIENE EL MISMO ANCHO QUE LAS TARJETAS DE PROYECTOS */
 
 /* ===========================================
    BOLITA LUMINOSA EN EL BORDE
@@ -1089,16 +1077,7 @@
   }
 }
 
-/* RESPONSIVE - MÓVILES PEQUEÑOS Y MEDIANOS - CONFIGURACIÓN ORIGINAL */
-@media (max-width: 480px) {
-  .texto-animado-container {
-    width: 100%; /* ANCHO COMPLETO */
-    max-width: 100%; /* SIN RESTRICCIONES */
-    margin: -1.5rem auto 2rem auto; /* MARGEN ORIGINAL */
-    padding: 0.5rem 1.2rem; /* PADDING MÁS AMPLIO PARA APROVECHAR ESPACIO */
-    position: static; /* POSICIÓN NORMAL */
-    transform: none; /* SIN TRANSFORMACIONES */
-  }
+/* ELIMINADO: LA TARJETA YA TIENE SU CONFIGURACIÓN SIMPLE Y CORRECTA */
 
   .contenido-cristal {
     padding: 1rem 1.5rem; /* PADDING INTERIOR MÁS AMPLIO */

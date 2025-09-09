@@ -170,8 +170,6 @@
 
     padding: 0.6rem;
     border-radius: 1rem;
-
-
   }
 
 /* —— Animación de la imagen de perfil —— */
@@ -205,17 +203,17 @@
 
   .imagen_perfil {
     width: clamp(140px, 45vw, 180px); /* MÁS GRANDE EN MÓVILES PARA MEJOR VISIBILIDAD */
-    margin: 0.2rem auto 0 auto; /* ELIMINAR MARGEN INFERIOR PARA PEGAR REDES */
+    margin: 0 auto 0 auto; /* SIN MARGEN PARA PEGAR COMPLETAMENTE */
   }
 
   .imagen_letra {
-    padding: 0.3rem 0.8rem 0.2rem 0.8rem; /* PADDING ULTRA-REDUCIDO */
+    padding: 0.2rem 0.8rem 0.1rem 0.8rem; /* PADDING ULTRA-REDUCIDO AL MÍNIMO */
   }
 
   /* CONSOLIDAR TODOS LOS ESTILOS DE REDES SOCIALES EN MÓVILES */
   .redes-sociales-container {
-    margin: -1.5rem auto 2.5rem auto; /* SUBIR MÁS LAS REDES SOCIALES */
-    gap: 0.2rem; /* ESPACIO ULTRA-REDUCIDO ENTRE ICONOS */
+    margin: -3rem auto 0 auto; /* PEGAR AL MÁXIMO POSIBLE */
+    gap: 0.05rem; /* ESPACIO ULTRA-MÍNIMO ENTRE ICONOS */
     flex-wrap: wrap !important; /* PERMITIR WRAP PARA MEJOR ADAPTABILIDAD */
     justify-content: center !important; /* CENTRAR SIEMPRE */
   }
@@ -399,20 +397,20 @@
   }
   
   .imagen_letra {
-    padding: 0.3rem 0.8rem 0.2rem 0.8rem; /* PADDING ULTRA-REDUCIDO */
+    padding: 0.1rem 0.8rem 0.05rem 0.8rem; /* PADDING ULTRA-REDUCIDO AL MÍNIMO */
     order: 1; /* Primero la imagen */
     min-height: 160px; /* ALTURA MÍNIMA ULTRA-REDUCIDA */
   }
   
   .imagen_perfil {
-    margin: 0 auto 0.1rem auto; /* MARGEN ULTRA-REDUCIDO */
+    margin: 0 auto 0 auto; /* SIN MARGEN PARA PEGAR COMPLETAMENTE */
   }
   
   /* En móviles, mostramos el contenedor separado */
   .redes-sociales-container {
     order: 2; /* Segundo las redes sociales */
-    margin: 0 auto 0.2rem auto; /* MARGEN ULTRA-REDUCIDO ANTES DE LA TARJETA */
-    gap: 0.2rem; /* ESPACIO ULTRA-REDUCIDO ENTRE ICONOS */
+    margin: -1.5rem auto 0 auto; /* PEGAR AÚN MÁS A LA IMAGEN */
+    gap: 0.05rem; /* ESPACIO ULTRA-MÍNIMO ENTRE ICONOS */
     display: flex; /* Aseguramos que esté visible */
     justify-content: center; /* Centrar contenido */
     align-items: center; /* Centrar verticalmente */
@@ -439,23 +437,23 @@
   }
 }
 
-/* PANTALLAS SUPER PEQUEÑAS - SUBIR AÚN MÁS LAS REDES SOCIALES */
+/* PANTALLAS SUPER PEQUEÑAS - REDES SOCIALES PEGADAS A LA IMAGEN */
 @media (max-width: 320px) {
   .redes-sociales-container {
-    margin: -2rem auto 0 auto; /* SUBIR PERO SIN MARGEN INFERIOR PARA PEGAR */
-    gap: 0.15rem; /* ESPACIO AÚN MÁS REDUCIDO ENTRE ICONOS */
+    margin: -3rem auto 0 auto; /* PEGAR AL MÁXIMO ABSOLUTO */
+    gap: 0.02rem; /* ESPACIO ULTRA-MÍNIMO ENTRE ICONOS */
   }
 
   .redes-sociales-container > div {
-    gap: 0.15rem; /* GAP MÍNIMO ENTRE ICONOS */
+    gap: 0.02rem; /* GAP ABSOLUTAMENTE MÍNIMO ENTRE ICONOS */
   }
 
   .imagen_perfil {
-    margin: 0.1rem auto 0 auto; /* SIN MARGEN INFERIOR PARA PEGAR REDES */
+    margin: 0 auto 0 auto; /* SIN MARGEN PARA PEGAR REDES COMPLETAMENTE */
   }
 
   .imagen_letra {
-    padding: 0.2rem 0.6rem 0.1rem 0.6rem; /* PADDING ULTRA-REDUCIDO */
+    padding: 0.05rem 0.6rem 0.02rem 0.6rem; /* PADDING ULTRA-REDUCIDO AL MÍNIMO ABSOLUTO */
     min-height: 140px; /* ALTURA MÍNIMA ULTRA-REDUCIDA */
   }
 

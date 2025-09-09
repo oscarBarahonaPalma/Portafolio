@@ -85,6 +85,7 @@
   padding: 8px;
   transform: scale(0);
   transition: transform 0.2s ease;
+  color: #000000; /* Color negro para los íconos */
 }
 .project-card.hovered .icon-container {
   transform: scale(1);

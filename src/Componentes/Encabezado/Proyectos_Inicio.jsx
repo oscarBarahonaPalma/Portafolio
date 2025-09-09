@@ -25,7 +25,7 @@ export default function Proyecto_Inicio() {
       description: "Portafolio interactivo y moderno que muestra mis proyectos, habilidades y experiencia como desarrollador frontend. Incluye animaciones, diseño responsive y navegación intuitiva.",
       icon: <Code size={40} />,
       image: "https://images.unsplash.com/photo-1615623705641-db34ad498cc5?q=80&w=940&auto=format&fit=crop",
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      technologies: ["React", "Vite", "Styled Components", "React Router", "vercel"],
       projectUrl: "https://portafolio-ivory-one-16.vercel.app",
       githubUrl: "https://github.com/usuario/portafolio",
       color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",

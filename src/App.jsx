@@ -2,13 +2,18 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
+// Importaciones desde Componentes/
 import Header from './Componentes/Header';
-import Inicio from './Componentes/Encabezado/Inicio';
+import Intro from './Componentes/Intro';
+import Cuerpo from './Componentes/Cuerpo';
 import Proyectos from './Componentes/Encabezado/Proyectos';
 import Sobre_Mi from './Componentes/Encabezado/Sobre_Mi';
 import Contacto from './Componentes/Encabezado/Contacto';
 
-import Intro from './Componentes/Intro'; // Asegúrate que el path sea correcto
+// Componente Inicio simple
+function Inicio() {
+  return <Cuerpo />;
+}
 
 // Crear gotas una sola vez fuera del componente para evitar recreación
 const GOTAS = Array.from({ length: 18 }).map((_, i) => {
@@ -33,7 +38,7 @@ function App() {
 
   // Si ya pasó el intro, renderizar el contenido real
   return (
-    <div className='layoud' style={{ position: 'relative', overflow: 'hidden' }}>
+    <div className='layout' style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Fondo de gotas animadas */}
       <div style={{
         position: 'absolute',
