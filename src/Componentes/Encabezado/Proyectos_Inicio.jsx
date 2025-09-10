@@ -13,9 +13,9 @@ export default function Proyecto_Inicio() {
       description: "Tienda online completa con carrito de compras, sistema de pagos integrado, gestión de inventario y dashboard administrativo. Incluye autenticación de usuarios y sistema de reseñas.",
       icon: <ShoppingCart size={40} />,
       image: "https://plus.unsplash.com/premium_photo-1677995700941-100976883af7?q=80&w=923&auto=format&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
+      technologies: ["React", "Vite", "React Router DOM", "Context API", "Vercel"],
       projectUrl: "https://tienda-two-rouge.vercel.app",
-      githubUrl: "https://github.com/usuario/eshop",
+      githubUrl: "https://github.com/oscarBarahonaPalma/Pizzas",
       color: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       shadowColor: "rgba(102, 126, 234, 0.4)"
     },
@@ -27,7 +27,7 @@ export default function Proyecto_Inicio() {
       image: "https://images.unsplash.com/photo-1615623705641-db34ad498cc5?q=80&w=940&auto=format&fit=crop",
       technologies: ["React", "Vite", "Styled Components", "React Router", "vercel"],
       projectUrl: "https://portafolio-ivory-one-16.vercel.app",
-      githubUrl: "https://github.com/usuario/portafolio",
+      githubUrl: "https://github.com/oscarBarahonaPalma/Portafolio",
       color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       shadowColor: "rgba(240, 147, 251, 0.4)"
     },
@@ -37,9 +37,9 @@ export default function Proyecto_Inicio() {
       description: "Dashboard meteorológico interactivo con pronósticos detallados, mapas climáticos, alertas meteorológicas y análisis histórico. Datos en tiempo real de múltiples fuentes.",
       icon: <Cloud size={40} />,
       image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
-      technologies: ["React", "D3.js", "OpenWeather API", "Mapbox"],
+      technologies: ["React", "Vite", "React Router DOM", "Lucide React", "EmailJS"],
       projectUrl: "https://app-clima-pi-blond.vercel.app",
-      githubUrl: "https://github.com/usuario/weather-live",
+      githubUrl: "https://github.com/oscarBarahonaPalma/app-clima",
       color: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       shadowColor: "rgba(79, 172, 254, 0.4)"
     }
